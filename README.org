@@ -54,10 +54,7 @@
 
       - XML formating is ignored.
       - Diff view in Eclipse :
-#+BEGIN_HTML
-<br/>
-<img src="http://dl.free.fr/bDpZ7QtGF"/>
-#+END_HTML
+[[http://img811.imageshack.us/img811/2521/comparisonxml.png]]
 
 ***** =DeepEqual=
 
@@ -73,8 +70,7 @@
       
       - Compared objects don't need to override =equals=.
       - Diff view in Eclipse :
-https://github.com/denlab/fest-assert-goodies/blob/master/src/doc/image/comparison-deep.png
-
+[[http://img52.imageshack.us/img52/7918/comparisondeep.png]]
 
 * Additional infos
 
