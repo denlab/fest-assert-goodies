@@ -1,300 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-lang="en" xml:lang="en">
-<head>
-<title>fest-assert-goodies</title>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2011-05-01 16:49:14 CEST"/>
-<meta name="author" content="Denis Labaye"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
-</style>
-<script type="text/javascript">
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
+#+TITLE: fest-assert-goodies
+#+author: Denis Labaye
+#+STARTUP: indent
+#+STARTUP: hidestars odd
 
-</head>
-<body>
-<div id="content">
+* What's this ? 
 
-<h1 class="title">fest-assert-goodies</h1>
+   [[http://docs.codehaus.org/display/FEST/Fluent%2BAssertions%2BModule][fest-assert]] is a great Java testing library.
 
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 What's this ? </a></li>
-<li><a href="#sec-2">2 Two minutes tutorial </a>
-<ul>
-<li><a href="#sec-2_1">2.1 Maven setup </a>
-<ul>
-<li><a href="#sec-2_1_1">2.1.1 Add Maven repository to your <code>pom.xml</code> </a></li>
-<li><a href="#sec-2_1_2">2.1.2 Add dependency to your <code>pom.xml</code> </a></li>
-</ul>
-</li>
-<li><a href="#sec-2_2">2.2 Using </a>
-<ul>
-<li><a href="#sec-2_2_1">2.2.1 <code>XmlEqual</code> </a></li>
-<li><a href="#sec-2_2_2">2.2.2 <code>DeepEqual</code> </a></li>
-</ul></li>
-</ul>
-</li>
-<li><a href="#sec-3">3 Additional infos </a>
-<ul>
-<li><a href="#sec-3_1">3.1 License </a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> What's this ? </h2>
-<div class="outline-text-2" id="text-1">
-
-
-<p>
-   <a href="http://docs.codehaus.org/display/FEST/Fluent+Assertions+Module">fest-assert</a> is a great Java testing library.
-</p>
-<p>
   fest-assert-goodies adds extra assertions to it.
-</p>
-<p>
+
   Right now there's: 
-</p>
-<ul>
-<li><code>DeepEqual</code> : Deep compare two objects, compared objects don't
-    need to override <code>equals</code>.
-</li>
-<li><code>XmlEquals</code> : Compare two XML strings, formatting is ignored.
-</li>
-</ul>
 
+  - =DeepEqual= : Deep compare two objects, compared objects don't
+    need to override =equals=.
+  - =XmlEquals= : Compare two XML strings, formatting is ignored.
 
-</div>
+* Two minutes tutorial
 
-</div>
+*** Maven setup
 
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Two minutes tutorial </h2>
-<div class="outline-text-2" id="text-2">
+***** TODO Add Maven repository to your =pom.xml=
 
+#+BEGIN_SRC xml
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+		</dependency>
+#+END_SRC
 
+***** TODO Add dependency to your =pom.xml=
 
-</div>
+#+BEGIN_SRC xml
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+		</dependency>
+#+END_SRC
+   
 
-<div id="outline-container-2_1" class="outline-3">
-<h3 id="sec-2_1"><span class="section-number-3">2.1</span> Maven setup </h3>
-<div class="outline-text-3" id="text-2_1">
+** Using
 
+***** =XmlEqual=
 
+#+BEGIN_SRC java
+	@Test
+	public void testXmlEqual() {
+		assertThat(new XmlEqual("<a><b x='1'></b></a>")).isXmlEqual(
+				"    <a><b x='2'></b></a>");
+	}
+#+END_SRC
 
-</div>
+      - XML formating is ignored.
+      - Diff view in Eclipse :
+ [[./comparison-xml.png]]
 
-<div id="outline-container-2_1_1" class="outline-4">
-<h4 id="sec-2_1_1"><span class="section-number-4">2.1.1</span> <span class="todo TODO"> TODO</span> Add Maven repository to your <code>pom.xml</code> </h4>
-<div class="outline-text-4" id="text-2_1_1">
+***** =DeepEqual=
 
+#+BEGIN_SRC java
+	@Test
+	public void testIsDeepEqual() throws Exception {
+		OuterClass actual = new OuterClass(new InnerClass("inner_"), "outer");
+		OuterClass expected = new OuterClass(new InnerClass("inner"), "outer");
 
+		assertThat(new DeepEqual(actual)).isDeepEqual(expected);
+	}
+#+END_SRC
+      
+      - Compared objects don't need to override =equals=.
+      - Diff view in Eclipse :
+ [[./comparison-deep.png]]
 
+* Additional infos
 
+*** License
 
-<pre class="src src-xml">&lt;<span style="color: #0000ff;">dependency</span>&gt;
-        &lt;<span style="color: #0000ff;">groupId</span>&gt;junit&lt;/<span style="color: #0000ff;">groupId</span>&gt;
-        &lt;<span style="color: #0000ff;">artifactId</span>&gt;junit&lt;/<span style="color: #0000ff;">artifactId</span>&gt;
-        &lt;<span style="color: #0000ff;">version</span>&gt;4.8.2&lt;/<span style="color: #0000ff;">version</span>&gt;
-&lt;/<span style="color: #0000ff;">dependency</span>&gt;
-</pre>
-
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2_1_2" class="outline-4">
-<h4 id="sec-2_1_2"><span class="section-number-4">2.1.2</span> <span class="todo TODO"> TODO</span> Add dependency to your <code>pom.xml</code> </h4>
-<div class="outline-text-4" id="text-2_1_2">
-
-
-
-
-
-<pre class="src src-xml">&lt;<span style="color: #0000ff;">dependency</span>&gt;
-        &lt;<span style="color: #0000ff;">groupId</span>&gt;junit&lt;/<span style="color: #0000ff;">groupId</span>&gt;
-        &lt;<span style="color: #0000ff;">artifactId</span>&gt;junit&lt;/<span style="color: #0000ff;">artifactId</span>&gt;
-        &lt;<span style="color: #0000ff;">version</span>&gt;4.8.2&lt;/<span style="color: #0000ff;">version</span>&gt;
-&lt;/<span style="color: #0000ff;">dependency</span>&gt;
-</pre>
-
-
-
-
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-2_2" class="outline-3">
-<h3 id="sec-2_2"><span class="section-number-3">2.2</span> Using </h3>
-<div class="outline-text-3" id="text-2_2">
-
-
-
-</div>
-
-<div id="outline-container-2_2_1" class="outline-4">
-<h4 id="sec-2_2_1"><span class="section-number-4">2.2.1</span> <code>XmlEqual</code> </h4>
-<div class="outline-text-4" id="text-2_2_1">
-
-
-
-
-
-<pre class="src src-java">@Test
-<span style="color: #a020f0;">public</span> <span style="color: #228b22;">void</span> testXmlEqual() {
-        assertThat(<span style="color: #a020f0;">new</span> <span style="color: #228b22;">XmlEqual</span>(<span style="color: #bc8f8f;">"&lt;a&gt;&lt;b x='1'&gt;&lt;/b&gt;&lt;/a&gt;"</span>)).isXmlEqual(
-                        <span style="color: #bc8f8f;">"    &lt;a&gt;&lt;b x='2'&gt;&lt;/b&gt;&lt;/a&gt;"</span>);
-}
-</pre>
-
-
-
-<ul>
-<li>XML formating is ignored.
-</li>
-<li>Diff view in Eclipse :
-</li>
-</ul>
-
-<p> <img src="./comparison-xml.png"  alt="./comparison-xml.png" />
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-2_2_2" class="outline-4">
-<h4 id="sec-2_2_2"><span class="section-number-4">2.2.2</span> <code>DeepEqual</code> </h4>
-<div class="outline-text-4" id="text-2_2_2">
-
-
-
-
-
-<pre class="src src-java">@Test
-<span style="color: #a020f0;">public</span> <span style="color: #228b22;">void</span> testIsDeepEqual() <span style="color: #a020f0;">throws</span> <span style="color: #228b22;">Exception</span> {
-        <span style="color: #228b22;">OuterClass</span> <span style="color: #b8860b;">actual</span> = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">OuterClass</span>(<span style="color: #a020f0;">new</span> <span style="color: #228b22;">InnerClass</span>(<span style="color: #bc8f8f;">"inner_"</span>), <span style="color: #bc8f8f;">"outer"</span>);
-        <span style="color: #228b22;">OuterClass</span> <span style="color: #b8860b;">expected</span> = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">OuterClass</span>(<span style="color: #a020f0;">new</span> <span style="color: #228b22;">InnerClass</span>(<span style="color: #bc8f8f;">"inner"</span>), <span style="color: #bc8f8f;">"outer"</span>);
-
-        assertThat(<span style="color: #a020f0;">new</span> <span style="color: #228b22;">DeepEqual</span>(actual)).isDeepEqual(expected);
-}
-</pre>
-
-
-
-<ul>
-<li>Compared objects don't need to override <code>equals</code>.
-</li>
-<li>Diff view in Eclipse :
-</li>
-</ul>
-
-<p> <img src="./comparison-deep.png"  alt="./comparison-deep.png" />
-</p>
-</div>
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Additional infos </h2>
-<div class="outline-text-2" id="text-3">
-
-
-
-</div>
-
-<div id="outline-container-3_1" class="outline-3">
-<h3 id="sec-3_1"><span class="section-number-3">3.1</span> License </h3>
-<div class="outline-text-3" id="text-3_1">
-
-
-<p>
     Apache 2.0
-</p></div>
-</div>
-</div>
-<div id="postamble">
-<p class="date">Date: 2011-05-01 16:49:14 CEST</p>
-<p class="author">Author: Denis Labaye</p>
-<p class="creator">Org version 7.5 with Emacs version 23</p>
-<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
-</div>
-</div>
-</body>
-</html>
