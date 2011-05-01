@@ -67,7 +67,8 @@ public void testXmlEqual() {
 public void testIsDeepEqual() throws Exception {
 	OuterClass actual = new OuterClass(new InnerClass("inner_"), "outer");
 	OuterClass expected = new OuterClass(new InnerClass("inner"), "outer");
-		assertThat(new DeepEqual(actual)).isDeepEqual(expected);
+
+	assertThat(new DeepEqual(actual)).isDeepEqual(expected);
 }
 #+END_SRC
       
