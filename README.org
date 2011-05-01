@@ -54,7 +54,7 @@
 
       - XML formating is ignored.
       - Diff view in Eclipse :
- [[./fest-assert-goodies/tree/master/src/doc/image/comparison-xml.png]]
+[[%20https://github.com/denlab/fest-assert-goodies/blob/master/src/doc/image/comparison-xml.png][ https://github.com/denlab/fest-assert-goodies/blob/master/src/doc/image/comparison-xml.png]]
 
 ***** =DeepEqual=
 
@@ -70,7 +70,7 @@
       
       - Compared objects don't need to override =equals=.
       - Diff view in Eclipse :
- [[./fest-assert-goodies/tree/master/src/doc/image/comparison-deep.png]]
+https://github.com/denlab/fest-assert-goodies/blob/master/src/doc/image/comparison-deep.png
 
 
 * Additional infos
