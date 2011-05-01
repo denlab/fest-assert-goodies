@@ -54,7 +54,10 @@
 
       - XML formating is ignored.
       - Diff view in Eclipse :
-[[%20https://github.com/denlab/fest-assert-goodies/blob/master/src/doc/image/comparison-xml.png][ https://github.com/denlab/fest-assert-goodies/blob/master/src/doc/image/comparison-xml.png]]
+#+BEGIN_HTML
+<br/>
+<img src="http://dl.free.fr/bDpZ7QtGF"/>
+#+END_HTML
 
 ***** =DeepEqual=
 
