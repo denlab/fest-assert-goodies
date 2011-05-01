@@ -11,7 +11,7 @@
 
   Right now there's: 
 
-  - =DeepEqual= : Deep compare two objects, compared objects don't
+  - =DeepEqual= : Deep compare two objects, compared classes don't
     need to override =equals=.
   - =XmlEqual= : Compare two XML strings, formatting is ignored.
 
@@ -58,7 +58,7 @@ public void testIsDeepEqual() throws Exception {
 }
 #+END_SRC
       
-      - Compared objects don't need to override =equals=.
+      - Compared classes don't need to override =equals=.
       - Diff view in Eclipse :
 [[http://img52.imageshack.us/img52/7918/comparisondeep.png]]
 
