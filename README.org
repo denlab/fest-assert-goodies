@@ -13,7 +13,7 @@
 
   - =DeepEqual= : Deep compare two objects, compared objects don't
     need to override =equals=.
-  - =XmlEquals= : Compare two XML strings, formatting is ignored.
+  - =XmlEqual= : Compare two XML strings, formatting is ignored.
 
 * Two minutes tutorial
 
@@ -46,20 +46,6 @@
 
 ** Using
 
-***** XmlEqual
-
-#+BEGIN_SRC java
-@Test
-public void testXmlEqual() {
-	assertThat(new XmlEqual("<a><b x='1'></b></a>")).isXmlEqual(
-			"    <a><b x='2'></b></a>");
-}
-#+END_SRC
-
-      - XML formating is ignored.
-      - Diff view in Eclipse :
-[[http://img811.imageshack.us/img811/2521/comparisonxml.png]]
-
 ***** DeepEqual
 
 #+BEGIN_SRC java
@@ -75,6 +61,20 @@ public void testIsDeepEqual() throws Exception {
       - Compared objects don't need to override =equals=.
       - Diff view in Eclipse :
 [[http://img52.imageshack.us/img52/7918/comparisondeep.png]]
+
+***** XmlEqual
+
+#+BEGIN_SRC java
+@Test
+public void testXmlEqual() {
+	assertThat(new XmlEqual("<a><b x='1'></b></a>")).isXmlEqual(
+			"    <a><b x='2'></b></a>");
+}
+#+END_SRC
+
+      - XML formating is ignored.
+      - Diff view in Eclipse :
+[[http://img811.imageshack.us/img811/2521/comparisonxml.png]]
 
 * Additional infos
 
